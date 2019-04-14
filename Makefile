@@ -27,24 +27,24 @@ endif
 default: $(TARGETC) $(TARGETCPP)
 
 $(TARGETC): #Insert c files
-	  $(CC) $(CFLAGS) -o $@ $^
+	$(CC) $(CFLAGS) -o $@ $^
 
 $(TARGETCPP): #Insert cpp files
-	  $(CXX) $(CXXFLAGS) -o $@ $^
+	$(CXX) $(CXXFLAGS) -o $@ $^
 
 #Clean directory
 clean:
 ifeq ($(RM),Del)
-		$(RM) #Insert generated files inside " " for windows
+	$(RM) #Insert generated files inside " " for windows
 endif
 ifeq ($(RM),rm)
-		$(RM) #Insert generated files for MacOS and Linux
+	$(RM) #Insert generated files for MacOS and Linux
 endif
 
 distclean: clean
 ifeq ($(RM),Del)
-		$(RM) #Insert executable files inside " " for windows
+	$(RM) #Insert executable files inside " " for windows
 endif
 ifeq ($(RM),rm)
-		$(RM) #Insert executable files for MacOS and Linux
+	$(RM) #Insert executable files for MacOS and Linux
 endif
